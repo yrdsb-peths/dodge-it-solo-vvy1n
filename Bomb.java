@@ -12,6 +12,14 @@ public class Bomb extends Actor
         {
             resetBomb();
         }
+        
+        if(isTouching(Hero.class))
+        {
+            //add gameover screen
+            SadFace sadFace = new SadFace();
+            getWorld().addObject(sadFace, 300, 200);
+            getWorld().removeObject(this);
+        }
     }
     
     public void resetBomb()
